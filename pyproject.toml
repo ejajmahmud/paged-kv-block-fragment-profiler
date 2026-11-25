@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paged-kv-block-fragment-profiler"
+version = "0.1.0"
+description = "Analyzes virtual KV-cache page tables for internal fragmentation, copy-on-write sharing, and eviction pressure"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Ejaj Mahmud", email = "dev@ejajmahmud.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.scripts]
+paged-kv-block-fragment-profiler = "paged_kv_block_fragment_profiler.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["paged_kv_block_fragment_profiler*"]
